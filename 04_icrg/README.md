@@ -1,0 +1,10 @@
+# In Silico Combined Reference Genome
+For the ICRG strategy, competitive alignment was performed against a concatenated human–mouse reference genome constructed by merging [RefSeq GRCh38.p14-genomic](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/) and [GRCm38-genomic](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.20/) assemblies. Mouse chromosome identifiers were prefixed with "m." to enable unambiguous species identification following alignment. Reads were assigned to species based on their primary alignment target within the combined reference.
+
+## Scripts 
+| Script                                                                | Usage                                              | Requirements                                                                           |
+| --------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [04.1_combine_reference_genomes.sh](./04.1_combine_reference_genomes.sh) | Concatenate human and mouse genome assemblies   | - |
+| [04.2_methylseq_samplesheet.py](04.2_methylseq_samplesheet.py)        | Create samplesheet as input for methylseq pipeline | [data_science.yml](../environments/data_science.yml)                                   |
+| [04.3_methylseq.sh](./04.3_methylseq.sh)                              | Methylseq alignment against the ICRG               | [nextflow.yml](../environments/nextflow.yml)                                           |
+| [04.4_methylseq_move_bam.py](./04.4_methylseq_move_bam.py)            | Move and organise output BAM files from the methylseq pipeline | [data_science.yml](../environments/data_science.yml)                      |
