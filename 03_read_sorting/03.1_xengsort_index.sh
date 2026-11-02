@@ -7,7 +7,7 @@ INDEX_PATH="${OUTPUT_DIR}/converted_index"
 mkdir -p "$OUTPUT_DIR"
 
 GENOME_HUMAN="GRCh38.p14-genomic.fna"
-GENOME_MOUSE="GRCm39-genomic.fna"
+GENOME_MOUSE="GRCm38-genomic.fna"
 
 echo "Indexing: ${REFERENCE_DIR}/${GENOME_HUMAN} + ${REFERENCE_DIR}/${GENOME_MOUSE}"
 echo "Index path: $INDEX_PATH"

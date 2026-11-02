@@ -3,8 +3,8 @@
 #BSUB -n 8
 #BSUB -R "rusage[mem=80G]"
 #BSUB -q long
-#BSUB -o logs/xengsort_%I.out
-#BSUB -e logs/xengsort_%I.err
+#BSUB -o logs/logs_newindex/xengsort_%I.out
+#BSUB -e logs/logs_newindex/xengsort_%I.err
 
 set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
@@ -24,10 +24,10 @@ SAMPLE_PREFIX="${HUMAN}_${MOUSE}"
 
 TOTAL_COUNT="50000000"
 MIXTURE="60p"
-INDEX_PATH="${DATA_DIR}/xengsort/converted_index"
+INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
 
 MIXTURE_DIR="${DATA_DIR}/mixtures/${SAMPLE_PREFIX}/${TOTAL_COUNT}/${MIXTURE}"
-OUT_PREFIX="${DATA_DIR}/runtime_memory/xengsort/${SAMPLE_PREFIX}/${TOTAL_COUNT}/${MIXTURE}/mixed_${REPLICATE}"
+OUT_PREFIX="${DATA_DIR}/runtime_memory/xengsort_newindex/${SAMPLE_PREFIX}/${TOTAL_COUNT}/${MIXTURE}/mixed_${REPLICATE}"
 mkdir -p "$(dirname "$OUT_PREFIX")"
 
 echo "Sample: ${SAMPLE_PREFIX}, replicate: ${REPLICATE}"

@@ -5,9 +5,9 @@ set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 DATA_DIR="/omics/odcf/analysis/OE0219_projects/epiproper/public_data/achinger-kawecka_2024/wgbs"
-XENGSORT_DIR="${DATA_DIR}/xengsort"
+XENGSORT_DIR="${DATA_DIR}/xengsort_newindex"
 METHOD="xengsort"
-RESULTS_DIR="${REPO_DIR}/08_pdx/results/xengsort_wgbs"
+RESULTS_DIR="${REPO_DIR}/08_pdx_wgbs/results/xengsort_wgbs_newindex"
 
 for SAMPLE_DIR in "$XENGSORT_DIR"/*/; do
     SAMPLE=$(basename "$SAMPLE_DIR")

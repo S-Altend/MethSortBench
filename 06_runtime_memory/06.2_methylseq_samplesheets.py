@@ -23,7 +23,7 @@ for human, mouse in PAIRS:
             total_reads=["50000000"],
             mixtures=["60p"],
             replicates=[0, 1, 2],
-            out_prefix="10p_",
+            out_prefix="60p_",
             data_dir=REPO / "data" / "mixtures",
             out_dir=OUT_DIR,
         )

@@ -3,18 +3,17 @@
 #BSUB -n 8
 #BSUB -M 80000
 #BSUB -R "rusage[mem=80000]"
-#BSUB -o logs/xengsort_%I.out
+#BSUB -o logs/logs_newindex/xengsort_%I.out
 #BSUB -q long
-#BSUB -e logs/xengsort_%I.err
+#BSUB -e logs/logs_newindex/xengsort_%I.err
 set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 READ_DIR="${PDX_DATA_DIR}/trimmed_reads"
-OUT_DIR="${PDX_DATA_DIR}/xengsort_new"
-INDEX_PATH="${DATA_DIR}/xengsort/converted_index"
+OUT_DIR="${PDX_DATA_DIR}/xengsort_newindex"
+INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
 
 mkdir -p "$OUT_DIR"
-mkdir -p "${REPO_DIR}/08_pdx/logs"
 
 SAMPLES=( $(ls "${READ_DIR}"/*_r1_val_1.fq.gz | xargs -I{} basename {} _r1_val_1.fq.gz) )
 SAMPLE="${SAMPLES[$((LSB_JOBINDEX - 1))]}"

@@ -3,9 +3,9 @@
 #BSUB -n 8
 #BSUB -M 80000
 #BSUB -R "rusage[mem=80000]"
-#BSUB -o logs/xengsort_rrbs_%I.out
+#BSUB -o logs/logs_newindex/xengsort_rrbs_%I.out
 #BSUB -q long
-#BSUB -e logs/xengsort_rrbs_%I.err
+#BSUB -e logs/logs_newindex/xengsort_rrbs_%I.err
 set -euo pipefail
 
 # Pass USE_START_SITES=1 to enable xengsort's built-in MspI filter.
@@ -18,18 +18,18 @@ USE_START_SITES="${USE_START_SITES:-0}"
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 READ_DIR="${GUILLEN_DATA_DIR}/rrbs/trimmed_reads"
-INDEX_PATH="${DATA_DIR}/xengsort/converted_index"
+INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
 
 if [[ "$USE_START_SITES" == "1" ]]; then
-    OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/xengsort_mspi"
+    OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/xengsort_mspi_newindex"
     START_SITES_FLAG="--use-start-sites"
 else
-    OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/xengsort"
+    OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/xengsort_newindex"
     START_SITES_FLAG=""
 fi
 
 mkdir -p "$OUT_DIR"
-mkdir -p "${REPO_DIR}/09_pdx_guillen_2022/logs"
+
 SAMPLES=( $(ls "${READ_DIR}"/*_r1_trimmed.fq.gz | xargs -I{} basename {} _r1_trimmed.fq.gz) )
 echo "${#SAMPLES[@]}"
 SAMPLE="${SAMPLES[$((LSB_JOBINDEX - 1))]}"

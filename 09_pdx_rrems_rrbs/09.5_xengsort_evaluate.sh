@@ -9,14 +9,14 @@ USE_START_SITES="${USE_START_SITES:-0}"
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 if [[ "$USE_START_SITES" == "1" ]]; then
-    METHOD="xengsort_mspi"
+    METHOD="xengsort_mspi_newindex"
 else
-    METHOD="xengsort"
+    METHOD="xengsort_newindex"
 fi
 
 for ASSAY in rrems; do
     OUT_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/${METHOD}"
-    RESULTS_DIR="${REPO_DIR}/09_pdx_guillen_2022/results/xengsort_${ASSAY}"
+    RESULTS_DIR="${REPO_DIR}/09_pdx_rrems_rrbs/results/xengsort_newindex_${ASSAY}"
     [[ "$USE_START_SITES" == "1" ]] && RESULTS_DIR="${RESULTS_DIR}_mspi"
     mkdir -p "$RESULTS_DIR"
     echo "=== ${ASSAY} ==="

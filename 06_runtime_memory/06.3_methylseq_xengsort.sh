@@ -21,17 +21,17 @@ for LABEL in cellline organoid1 organoid2 organoid3; do
     HUMAN="${HUMAN_SAMPLES[$LABEL]}"
     MOUSE="${MOUSE_SAMPLES[$LABEL]}"
     SAMPLE_PREFIX="${HUMAN}_${MOUSE}"
-    INPUT="${REPO_DIR}/06_runtime_memory/methylseq_samplesheets/xengsort_graft_${SAMPLE_PREFIX}_${TOTAL_READS}_${GENOME}.csv"
+    INPUT="${REPO_DIR}/06_runtime_memory/methylseq_samplesheets_newindex/xengsort_graft_${SAMPLE_PREFIX}_${TOTAL_READS}_${GENOME}.csv"
     OUTDIR="${DATA_DIR}/runtime_memory/pipelines/xengsort_${LABEL}"
     WORKDIR="${DATA_DIR}/runtime_memory/work/xengsort_${LABEL}"
 
     bsub \
         -q highmem \
-        -R "rusage[mem=205GB]" \
+        -R "rusage[mem=255GB]" \
         -n 12 \
         -J "methylseq_xengsort_${LABEL}" \
-        -o "${REPO_DIR}/06_runtime_memory/logs/xengsort_${LABEL}.out" \
-        -e "${REPO_DIR}/06_runtime_memory/logs/xengsort_${LABEL}.err" \
+        -o "${REPO_DIR}/06_runtime_memory/logs/logs_newindex/xengsort_${LABEL}.out" \
+        -e "${REPO_DIR}/06_runtime_memory/logs/logs_newindex/xengsort_${LABEL}.err" \
         nextflow run nf-core/methylseq \
             -profile singularity \
             --input "$INPUT" \
