@@ -5,10 +5,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "helper"))
 from make_samplesheet_pdx import write_samplesheet, xengsort_graft_rows
 
 script_dir   = Path(__file__).parent
-out_dir      = script_dir / "methylseq_samplesheets"
+out_dir      = script_dir / "methylseq_samplesheets_newindex"
 pdx_data_dir = script_dir.parent / "data" / "achinger-kawecka_2024"
 trimmed_dir  = pdx_data_dir / "trimmed_reads"
-xengsort_dir = pdx_data_dir / "xengsort_new"
+xengsort_dir = pdx_data_dir / "xengsort_newindex"
 
 out_dir.mkdir(parents=True, exist_ok=True)
 

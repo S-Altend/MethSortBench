@@ -15,8 +15,8 @@ read -r HUMAN_SAMPLE MOUSE_SAMPLE <<< "${SAMPLE_PAIRS[$PAIR_IDX]}"
 TOTAL_COUNT="${TOTAL_COUNTS[$DEPTH_IDX]}"
 SAMPLE_PREFIX="${HUMAN_SAMPLE}_${MOUSE_SAMPLE}"
 
-INDEX_PATH="${DATA_DIR}/xengsort/converted_index"
-OUT_DIR="${DATA_DIR}/xengsort"
+INDEX_PATH="${DATA_DIR}/xengsort_newindex/converted_index"
+OUT_DIR="${DATA_DIR}/xengsort_newindex"
 THREADS=8
 
 for MIXTURE in "${MIXTURES[@]}"; do

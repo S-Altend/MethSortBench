@@ -5,7 +5,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "helper"))
 from make_samplesheet_pdx import write_samplesheet, xengsort_graft_rows, mspi_filtered_rows
 
 script_dir = Path(__file__).parent
-out_dir    = script_dir / "methylseq_samplesheets"
+out_dir    = script_dir / "methylseq_samplesheets_newindex"
 data_dir   = script_dir.parent / "data" / "guillen_2022"
 
 out_dir.mkdir(parents=True, exist_ok=True)
@@ -58,29 +58,29 @@ write_samplesheet(
     ),
 )
 
-# --- RRBS: XenoSort graft reads ---
+# --- RRBS: Xengsort graft reads ---
 write_samplesheet(
     out_dir / "guillen_rrbs_xengsort_graft.csv",
-    xengsort_graft_rows(data_dir / "rrbs" / "xengsort", paired=False),
+    xengsort_graft_rows(data_dir / "rrbs" / "xengsort_newindex", paired=False),
 )
 
-# --- RRBS: XenoSort MspI-prefiltered graft reads (USE_START_SITES=1) ---
+# --- RRBS: Xengsort MspI-prefiltered graft reads (USE_START_SITES=1) ---
 write_samplesheet(
     out_dir / "guillen_rrbs_xengsort_graft_mspi.csv",
-    xengsort_graft_rows(data_dir / "rrbs" / "xengsort_mspi", paired=False),
+    xengsort_graft_rows(data_dir / "rrbs" / "xengsort_mspi_newindex", paired=False),
 )
 
-# --- RREMS: XenoSort graft reads ---
+# --- RREMS: Xengsort graft reads ---
 write_samplesheet(
     out_dir / "guillen_rrems_xengsort_graft.csv",
-    xengsort_graft_rows(data_dir / "rrems" / "xengsort", paired=True),
+    xengsort_graft_rows(data_dir / "rrems" / "xengsort_newindex", paired=True),
 )
 
-# --- RREMS: XenoSort MspI-prefiltered graft reads (USE_START_SITES=1) ---
-if (data_dir / "rrems" / "xengsort_mspi").exists():
+# --- RREMS: Xengsort MspI-prefiltered graft reads (USE_START_SITES=1) ---
+if (data_dir / "rrems" / "xengsort_newindex_mspi").exists():
     write_samplesheet(
         out_dir / "guillen_rrems_xengsort_graft_mspi.csv",
-        xengsort_graft_rows(data_dir / "rrems" / "xengsort_mspi", paired=True),
+        xengsort_graft_rows(data_dir / "rrems" / "xengsort_mspi_newindex", paired=True),
     )
 else:
     print("Skipping guillen_rrems_xengsort_graft_mspi.csv: xengsort_mspi not found")
