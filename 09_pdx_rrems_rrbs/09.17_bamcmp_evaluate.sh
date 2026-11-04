@@ -3,10 +3,10 @@ set -euo pipefail
 source "$(dirname "$0")/../config.sh"
 
 # Usage:
-#   ASSAY=rrbs bash 09.18_bamcmp_evaluate.sh
-#   ASSAY=rrems bash 09.18_bamcmp_evaluate.sh
-#   ASSAY=rrbs USE_START_SITES=1 bash 09.18_bamcmp_evaluate.sh
-#   ASSAY=rrems USE_START_SITES=1 bash 09.18_bamcmp_evaluate.sh
+#   ASSAY=rrbs bash 09.17_bamcmp_evaluate.sh
+#   ASSAY=rrems bash 09.17_bamcmp_evaluate.sh
+#   ASSAY=rrbs USE_START_SITES=1 bash 09.17_bamcmp_evaluate.sh
+#   ASSAY=rrems USE_START_SITES=1 bash 09.17_bamcmp_evaluate.sh
 ASSAY="${ASSAY:-rrbs}"
 USE_START_SITES="${USE_START_SITES:-0}"
 LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
