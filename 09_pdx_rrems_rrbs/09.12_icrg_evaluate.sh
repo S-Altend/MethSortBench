@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage:
-#   bash 09.13_icrg_evaluate.sh               → pipeline_icrg/   → results/icrg{,_rrems}/
-#   USE_START_SITES=1 bash 09.13_icrg_evaluate.sh → pipeline_icrg_mspi/ → results/icrg{,_rrems}_mspi/
+#   bash 09.12_icrg_evaluate.sh               → pipeline_icrg/   → results/icrg{,_rrems}/
+#   USE_START_SITES=1 bash 09.12_icrg_evaluate.sh → pipeline_icrg_mspi/ → results/icrg{,_rrems}_mspi/
 set -euo pipefail
 
 USE_START_SITES="${USE_START_SITES:-0}"

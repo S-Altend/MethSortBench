@@ -1,9 +1,9 @@
 #!/usr/bin/env Rscript
 # Usage:
-#   Rscript 09.19_xenofilter_samplesheet.R
-#   ASSAY=rrems Rscript 09.19_xenofilter_samplesheet.R
-#   ASSAY=rrbs USE_START_SITES=1 Rscript 09.19_xenofilter_samplesheet.R
-#   ASSAY=rrems USE_START_SITES=1 Rscript 09.19_xenofilter_samplesheet.R
+#   Rscript 09.18_xenofilter_samplesheet.R
+#   ASSAY=rrems Rscript 09.18_xenofilter_samplesheet.R
+#   ASSAY=rrbs USE_START_SITES=1 Rscript 09.18_xenofilter_samplesheet.R
+#   ASSAY=rrems USE_START_SITES=1 Rscript 09.18_xenofilter_samplesheet.R
 
 script_dir <- tryCatch(
   dirname(normalizePath(sys.frame(1)$ofile)),

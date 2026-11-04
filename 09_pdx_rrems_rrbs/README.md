@@ -1,6 +1,6 @@
 # Xengsort validation on Patient-Derived Xenograft (PDX) data from Guillen et al. 2022
 
-In this subdirectory, we applied Xengsort onto publicly available PDX, PDXO (Patient-derived Xenograft Organoids) and human patient samples from **Guillen et al. 2022** to proof its usage in biological datasets across 2 different Reduced-Representation methylation sequencing technologies: Bisulfite Sequencing (**RRBS**) and Enzymatic Sequencing (**RREMS**). These protocols use restriction enzymes such as **MspI** (cut site: C/CGG) which enrich for CpG-rich regions in the methylome before subsequent sequencing.
+In this subdirectory, we applied Xengsort onto publicly available PDX, PDXO (Patient-derived Xenograft Organoids) and human patient samples from **Guillen et al. 2022** to prove in biological datasets across 2 different Reduced-Representation methylation sequencing technologies: Bisulfite Sequencing (**RRBS**) and Enzymatic Methylation Sequencing (**RREMS**). These protocols use restriction enzymes such as **MspI** (cut site: C/CGG) which enrich for CpG-rich regions in the methylome before subsequent sequencing.
 
 ## Data
 | Attribute | Value |
@@ -9,9 +9,9 @@ In this subdirectory, we applied Xengsort onto publicly available PDX, PDXO (Pat
 | SRA Study accession | SRP343608 |
 | BioProject | PRJNA775956 |
 | Sample origin | Breast cancer PDX models (HCI series), matched trios of Patient tumor / PDX / PDXO (patient-derived xenograft organoid) |
-| Library preps | RRBS (single-end, 50 bp) and RREM-seq (paired-end, 50 bp) |
+| Library preps | RRBS (single-end, 50 bp) and RREMS (paired-end, 50 bp) |
 | RRBS samples | 11 |
-| RREM-seq samples | 20 |
+| RREMS samples | 20 |
 
 
 ## Read sorting comparison
@@ -34,8 +34,8 @@ As with the [other PDX cohort](../08_pdx_wgbs/), we compare read sorting perform
 | [09.10_methylseq_icrg_rrems.sh](./09.10_methylseq_icrg_rrems.sh) | Alignment of all RREMS reads against ICRG | [nextflow.yml](../environments/nextflow.yml) |
 | [09.11_methylseq_icrg_rrbs.sh](./09.11_methylseq_icrg_rrbs.sh) | Alignment of all RRBS reads against ICRG | [nextflow.yml](../environments/nextflow.yml) |
 | [09.12_icrg_evaluate.sh](./09.12_icrg_evaluate.sh) | Evaluate ICRG read sorting results (RRBS + RREMS, incl. MspI variants) | - |
-| [09.13_methylseq_human_rrems.sh](./09.13_methylseq_human_rrems.sh) | Alignment of all RREMS reads against the human reference genome; required for bamcmp and XenofilteR read sorting | [nextflow.yml](../environments/nextflow.yml) |
-| [09.14_methylseq_human_rrbs.sh](./09.14_methylseq_human_rrbs.sh) | Alignment of all RRBS reads against the human reference genome; required for bamcmp and XenofilteR read sorting | [nextflow.yml](../environments/nextflow.yml) |
+| [09.13_methylseq_human_rrems.sh](./09.13_methylseq_human_rrems.sh) | Alignment of all RREMS reads against the human or mouse reference genome; required for bamcmp and XenofilteR read sorting | [nextflow.yml](../environments/nextflow.yml) |
+| [09.14_methylseq_human_rrbs.sh](./09.14_methylseq_human_rrbs.sh) | Alignment of all RRBS reads against the human or mouse reference genome; required for bamcmp and XenofilteR read sorting | [nextflow.yml](../environments/nextflow.yml) |
 | [09.15_bamcmp_bam_sorting.sh](./09.15_bamcmp_bam_sorting.sh) | Name-sorted *.bam* files required for bamcmp input | [bamcmp.yml](../environments/bamcmp.yml) |
 | [09.16_bamcmp.sh](./09.16_bamcmp.sh) | bamcmp read sorting | [bamcmp.yml](../environments/bamcmp.yml) |
 | [09.17_bamcmp_evaluate.sh](./09.17_bamcmp_evaluate.sh) | Evaluate bamcmp read sorting results | - |

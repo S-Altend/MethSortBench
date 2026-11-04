@@ -9,10 +9,10 @@ set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 # Usage:
-#   ASSAY=rrbs bsub < 09.16_bamcmp_bam_sorting.sh
-#   ASSAY=rrems bsub < 09.16_bamcmp_bam_sorting.sh
-#   ASSAY=rrbs USE_START_SITES=1 bsub < 09.16_bamcmp_bam_sorting.sh
-#   ASSAY=rrems USE_START_SITES=1 bsub < 09.16_bamcmp_bam_sorting.sh
+#   ASSAY=rrbs bsub < 09.15_bamcmp_bam_sorting.sh
+#   ASSAY=rrems bsub < 09.15_bamcmp_bam_sorting.sh
+#   ASSAY=rrbs USE_START_SITES=1 bsub < 09.15_bamcmp_bam_sorting.sh
+#   ASSAY=rrems USE_START_SITES=1 bsub < 09.15_bamcmp_bam_sorting.sh
 # Array is [1-20] (rrems max); for rrbs (11 samples) indices 12-20 are skipped automatically.
 ASSAY="${ASSAY:-rrbs}"
 USE_START_SITES="${USE_START_SITES:-0}"
