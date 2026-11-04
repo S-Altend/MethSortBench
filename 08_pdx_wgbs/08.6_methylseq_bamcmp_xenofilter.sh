@@ -3,7 +3,7 @@ source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchma
 
 ORIGIN="achinger-kawecka"
 ALIGNER="bwameth"
-INPUT="${REPO_DIR}/08_pdx/methylseq_samplesheets/${ORIGIN}.csv"
+INPUT="${REPO_DIR}/08_pdx/methylseq_samplesheets_newindex/${ORIGIN}.csv"
 
 # Usage: bash 08.6_methylseq_bamcmp_xenofilter.sh GRCh38
 #        bash 08.6_methylseq_bamcmp_xenofilter.sh GRCm38

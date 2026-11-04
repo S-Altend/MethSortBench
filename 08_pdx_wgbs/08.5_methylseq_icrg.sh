@@ -1,7 +1,7 @@
 #!/bin/bash
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
-INPUT="${REPO_DIR}/08_pdx/methylseq_samplesheets/achinger-kawecka.csv"
+INPUT="${REPO_DIR}/08_pdx/methylseq_samplesheets_newindex/achinger-kawecka.csv"
 OUT_DIR="${DATA_DIR}/pipeline_pdx_icrg2"
 
 nextflow run nf-core/methylseq \

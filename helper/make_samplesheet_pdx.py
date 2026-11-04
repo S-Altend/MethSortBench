@@ -1,6 +1,5 @@
 """
 Shared helpers for building nf-core/methylseq samplesheets from PDX datasets.
-Used by 08_pdx, 09_pdx_guillen_2022, and 10_pdox_zhao.
 """
 
 import csv
