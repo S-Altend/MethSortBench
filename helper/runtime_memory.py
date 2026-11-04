@@ -392,7 +392,7 @@ def split_runmem(df):
 def split_runmem_assay(df):
     """Split a parse_lsf_logs DataFrame by assay (rrbs / rrems) and use-start-sites.
 
-    Expects sample strings in the format produced by 09.17_bamcmp.sh:
+    Expects sample strings in the format produced by 09.16_bamcmp.sh:
         '<sample> | assay: <assay> | use-start-sites: <0|1>'
 
     Returns

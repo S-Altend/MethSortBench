@@ -13,7 +13,7 @@ LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
 
 BAMCMP_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/bamcmp${LABEL}"
 METHOD="bamcmp"
-RESULTS_DIR="${REPO_DIR}/09_pdx_guillen_2022/results/bamcmp_${ASSAY}${LABEL}"
+RESULTS_DIR="${REPO_DIR}/09_pdx_rrems_rrbs/results/bamcmp_${ASSAY}${LABEL}"
 mkdir -p "$RESULTS_DIR"
 
 count_bam() {

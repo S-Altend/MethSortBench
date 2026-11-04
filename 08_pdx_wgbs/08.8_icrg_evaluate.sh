@@ -2,7 +2,7 @@
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 data_dir="${DATA_DIR}/achinger-kawecka_2024/pipelines/pipeline_pdx_icrg2/bwameth/deduplicated"
-out_base="${REPO_DIR}/08_pdx/results/icrg_wgbs"
+out_base="${REPO_DIR}/08_pdx_wgbs/results/icrg_wgbs"
 
 for bam in "$data_dir"/*.markdup.sorted.bam; do
     sample=$(basename "$bam" .markdup.sorted.bam)

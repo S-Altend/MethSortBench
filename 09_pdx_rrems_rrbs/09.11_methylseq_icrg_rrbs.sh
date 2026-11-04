@@ -7,7 +7,7 @@
 #BSUB -e logs/icrg_rrbs.err
 # Pass USE_START_SITES=1 to align MspI-prefiltered reads instead of standard trimmed reads.
 # Usage:
-#   bsub < 09.12_methylseq_icrg_rrbs.sh               → rrbs/pipeline_icrg/
+#   bsub < 09.11_methylseq_icrg_rrbs.sh               → rrbs/pipeline_icrg/
 #   USE_START_SITES=1 bsub < ...                       → rrbs/pipeline_icrg_mspi/
 
 USE_START_SITES="${USE_START_SITES:-0}"

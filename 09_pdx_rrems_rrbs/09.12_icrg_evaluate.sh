@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage:
-#   bash 09.13_icrg_evaluate.sh               → pipeline_icrg/   → results/icrg{,_rrems}/
-#   USE_START_SITES=1 bash 09.13_icrg_evaluate.sh → pipeline_icrg_mspi/ → results/icrg{,_rrems}_mspi/
+#   bash 09.12_icrg_evaluate.sh               → pipeline_icrg/   → results/icrg{,_rrems}/
+#   USE_START_SITES=1 bash 09.12_icrg_evaluate.sh → pipeline_icrg_mspi/ → results/icrg{,_rrems}_mspi/
 set -euo pipefail
 
 USE_START_SITES="${USE_START_SITES:-0}"
@@ -16,15 +16,15 @@ else
     METHOD="icrg"
 fi
 
-for ASSAY in rrems; do
+for ASSAY in rrbs rrems; do
     if [[ "$ASSAY" == "rrbs" ]]; then
         BAM_DIR="${GUILLEN_DATA_DIR}/rrbs/pipelines/pipeline_icrg${PIPELINE_SUFFIX}/bwameth/alignments"
         BAM_SUFFIX=".sorted.bam"
-        OUT_BASE="${REPO_DIR}/09_pdx_guillen_2022/results/icrg_rrbs${PIPELINE_SUFFIX}"
+        OUT_BASE="${REPO_DIR}/09_pdx_rrems_rrbs/results/icrg_rrbs${PIPELINE_SUFFIX}"
     else
         BAM_DIR="${GUILLEN_DATA_DIR}/rrems/pipelines/pipeline_icrg${PIPELINE_SUFFIX}/bwameth/alignments"
         BAM_SUFFIX=".sorted.bam"
-        OUT_BASE="${REPO_DIR}/09_pdx_guillen_2022/results/icrg_rrems${PIPELINE_SUFFIX}"
+        OUT_BASE="${REPO_DIR}/09_pdx_rrems_rrbs/results/icrg_rrems${PIPELINE_SUFFIX}"
     fi
 
     echo "=== ${ASSAY} ==="

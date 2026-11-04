@@ -1,15 +1,15 @@
 #!/usr/bin/env Rscript
 # Submit (rrbs, 11 samples):
-#   ASSAY=rrbs bsub -J guillen_xenofilter[1-11] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrbs_%I.out -e logs/xenofilter_rrbs_%I.err Rscript 09.21_xenofilter.R
+#   ASSAY=rrbs bsub -J guillen_xenofilter[1-11] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrbs_%I.out -e logs/xenofilter_rrbs_%I.err Rscript 09.20_xenofilter.R
 #
 # Submit (rrbs mspi, 11 samples):
-#   ASSAY=rrbs USE_START_SITES=1 bsub -J guillen_xenofilter[1-11] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrbs_mspi_%I.out -e logs/xenofilter_rrbs_mspi_%I.err Rscript 09.21_xenofilter.R
+#   ASSAY=rrbs USE_START_SITES=1 bsub -J guillen_xenofilter[1-11] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrbs_mspi_%I.out -e logs/xenofilter_rrbs_mspi_%I.err Rscript 09.20_xenofilter.R
 #
 # Submit (rrems, 20 samples):
-#   ASSAY=rrems bsub -J guillen_xenofilter[1-20] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrems_%I.out -e logs/xenofilter_rrems_%I.err Rscript 09.21_xenofilter.R
+#   ASSAY=rrems bsub -J guillen_xenofilter[1-20] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrems_%I.out -e logs/xenofilter_rrems_%I.err Rscript 09.20_xenofilter.R
 #
 # Submit (rrems mspi, 20 samples):
-#   ASSAY=rrems USE_START_SITES=1 bsub -J guillen_xenofilter[1-20] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrems_mspi_%I.out -e logs/xenofilter_rrems_mspi_%I.err Rscript 09.21_xenofilter.R
+#   ASSAY=rrems USE_START_SITES=1 bsub -J guillen_xenofilter[1-20] -n 1 -R "rusage[mem=80GB]" -q long -o logs/xenofilter_rrems_mspi_%I.out -e logs/xenofilter_rrems_mspi_%I.err Rscript 09.20_xenofilter.R
 
 library("XenofilteR")
 library("BiocParallel")

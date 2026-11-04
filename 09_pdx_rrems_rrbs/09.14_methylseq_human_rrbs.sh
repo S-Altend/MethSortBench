@@ -8,10 +8,10 @@
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 # Usage:
-#   bsub < 09.15_methylseq_human_rrbs.sh                        # human, no MspI
-#   GENOME=mouse bsub < 09.15_methylseq_human_rrbs.sh           # mouse, no MspI
-#   USE_START_SITES=1 bsub < 09.15_methylseq_human_rrbs.sh      # human, MspI
-#   GENOME=mouse USE_START_SITES=1 bsub < 09.15_methylseq_human_rrbs.sh
+#   bsub < 09.14_methylseq_human_rrbs.sh                        # human, no MspI
+#   GENOME=mouse bsub < 09.14_methylseq_human_rrbs.sh           # mouse, no MspI
+#   USE_START_SITES=1 bsub < 09.14_methylseq_human_rrbs.sh      # human, MspI
+#   GENOME=mouse USE_START_SITES=1 bsub < 09.14_methylseq_human_rrbs.sh
 GENOME="${GENOME:-human}"
 USE_START_SITES="${USE_START_SITES:-0}"
 

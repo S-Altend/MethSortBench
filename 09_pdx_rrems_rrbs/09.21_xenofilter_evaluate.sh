@@ -3,10 +3,10 @@ set -euo pipefail
 source "$(dirname "$0")/../config.sh"
 
 # Usage:
-#   ASSAY=rrbs bash 09.22_xenofilter_evaluate.sh
-#   ASSAY=rrems bash 09.22_xenofilter_evaluate.sh
-#   ASSAY=rrbs USE_START_SITES=1 bash 09.22_xenofilter_evaluate.sh
-#   ASSAY=rrems USE_START_SITES=1 bash 09.22_xenofilter_evaluate.sh
+#   ASSAY=rrbs bash 09.21xenofilter_evaluate.sh
+#   ASSAY=rrems bash 09.21xenofilter_evaluate.sh
+#   ASSAY=rrbs USE_START_SITES=1 bash 09.21xenofilter_evaluate.sh
+#   ASSAY=rrems USE_START_SITES=1 bash 09.21xenofilter_evaluate.sh
 ASSAY="${ASSAY:-rrbs}"
 USE_START_SITES="${USE_START_SITES:-0}"
 LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
@@ -14,7 +14,7 @@ LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
 METHOD="XenofilteR"
 XENOFILTER_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/xenofilter${LABEL}"
 HUMAN_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/pipelines/pipeline_human${LABEL}/bwameth/alignments"
-RESULTS_DIR="${REPO_DIR}/09_pdx_guillen_2022/results/xenofilter_${ASSAY}${LABEL}"
+RESULTS_DIR="${REPO_DIR}/09_pdx_rrems_rrbs/results/xenofilter_${ASSAY}${LABEL}"
 mkdir -p "$RESULTS_DIR"
 
 count_bam() {
