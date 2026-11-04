@@ -14,7 +14,7 @@ else
     METHOD="xengsort_newindex"
 fi
 
-for ASSAY in rrems; do
+for ASSAY in rrbs rrems; do
     OUT_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/${METHOD}"
     RESULTS_DIR="${REPO_DIR}/09_pdx_rrems_rrbs/results/xengsort_newindex_${ASSAY}"
     [[ "$USE_START_SITES" == "1" ]] && RESULTS_DIR="${RESULTS_DIR}_mspi"

@@ -14,7 +14,7 @@ LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
 METHOD="XenofilteR"
 XENOFILTER_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/xenofilter${LABEL}"
 HUMAN_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/pipelines/pipeline_human${LABEL}/bwameth/alignments"
-RESULTS_DIR="${REPO_DIR}/09_pdx_guillen_2022/results/xenofilter_${ASSAY}${LABEL}"
+RESULTS_DIR="${REPO_DIR}/09_pdx_rrems_rrbs/results/xenofilter_${ASSAY}${LABEL}"
 mkdir -p "$RESULTS_DIR"
 
 count_bam() {

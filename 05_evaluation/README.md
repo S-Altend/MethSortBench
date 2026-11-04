@@ -19,16 +19,16 @@ During *in silico* mixing of WGBS reads, we annotated reads in the read header a
 - False Negatives (FN): Human reads sorted to non-human.
 
 ## bamcmp Evaluation
-bamcmp read sorting yields to 4 sorted .bam files: *humanBetter*, *humanOnly*, *mouseBetter* and *mouseOnly*.
+bamcmp read sorting yields 4 sorted .bam files: *humanBetter*, *humanOnly*, *mouseBetter* and *mouseOnly*.
 Since the tool was developed for Whole Genome Sequencing, almost all bisulfite-converted reads were ambiguously classified as either *humanBetter* or *mouseBetter*. Therefore, we evaluated these ambiguous classes as human and non-human to calculate TP, FP, TN and FN.
 
 
 ## XenofilteR Evaluation
-XenofilteR read sorting yields to 1 sorted .bam file, which only contains the as human classified reads. From this result, we can directly calculate TP and FP. TN and FN are calculated based on our ground truth knowledge. 
+XenofilteR read sorting yields 1 sorted .bam file, which only contains the as human classified reads. From this result, we can directly calculate TP and FP. TN and FN are calculated based on our ground truth knowledge. 
 
 
 ## Xengsort Evaluation
-Xengsort read sorting yields to five .fastq files: *host*, *graft*, *ambiguous*, *both*, *neither*. \
+Xengsort read sorting yields five .fastq files: *host*, *graft*, *ambiguous*, *both*, *neither*. \
 TP and FP are called from *graft*, TN and FN from *host*, *ambiguous*, *both*, *neither*.
 
 
