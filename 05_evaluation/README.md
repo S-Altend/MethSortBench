@@ -33,7 +33,7 @@ TP and FP are called from *graft*, TN and FN from *host*, *ambiguous*, *both*, *
 
 
 ## In Silico Combined Reference Genome
-ICRG uses a concatenated reference genome (mouse + human), whereas mouse chromosomes are labelled as m.chr. TPs are determined by counting the number of human reads (`human_` prefix) assigned to human chromosomes. TNs are calculated by extracting non-human reads (`mouse_` prefix) that aligned to mouse chromosomes or were unmapped.
+ICRG uses a concatenated reference genome (mouse + human), whereas mouse chromosomes are labelled as m.chr. TPs are determined by counting the number of human reads (`human_` prefix) assigned to human chromosomes. TNs are calculated by extracting non-human reads (`mouse_` prefix) that aligned to mouse chromosomes or were unmapped. FPs are non-human reads aligned to human chromosomes.
 
 
 ## Requirements
