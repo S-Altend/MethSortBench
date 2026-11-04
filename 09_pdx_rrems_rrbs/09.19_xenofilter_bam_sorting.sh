@@ -20,7 +20,7 @@ LABEL=$( [[ "$USE_START_SITES" == "1" ]] && echo "_mspi" || echo "" )
 
 THREADS=16
 
-mkdir -p "${REPO_DIR}/09_pdx_guillen_2022/logs"
+mkdir -p "${REPO_DIR}/09_pdx_rrems_rrbs/logs"
 
 HUMAN_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/pipelines/pipeline_human${LABEL}/bwameth/alignments"
 MOUSE_DIR="${GUILLEN_DATA_DIR}/${ASSAY}/pipelines/pipeline_mouse${LABEL}/bwameth/alignments"
