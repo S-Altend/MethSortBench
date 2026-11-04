@@ -3,7 +3,7 @@ In this subdirectory, we compared read sorting tool performances and scalability
 
 ## Performance & Scalability metrics
 
-$\text{Accuracy Score} = 0.7 \times \text{Specificity} + 0.3 \times \text{Sensitivity}$
+$\text{Accuracy Score} = 0.7 \times \text{Precision} + 0.3 \times \text{Sensitivity}$
 
 $\text{Runtime Score} =  1- min\_max( \text{Runtime})$
 
@@ -11,7 +11,7 @@ $\text{Max. Memory Score} = 1- min\_max( \text{Max. Memory})$
 
 $\text{Efficiency Score} = 0.5 \times \text{Runtime Score} + 0.5 \times \text{Max. Memory Score}$
 
-$\text{Overall Score} =  0.7 \times \text{Performance Score} + 0.3 \times \text{Scalability Score}$
+$\text{Overall Score} =  0.7 \times \text{Accuracy Score} + 0.3 \times \text{Efficiency Score}$
 
 
 

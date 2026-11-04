@@ -12,7 +12,7 @@ Since every tool generated their own individual output files, we wrote an 'evalu
 | [05.4_xenofilter_evaluate.sh](./05.4_xenofilter_evaluate.sh) | BAM: *filtered* (human)                                              |
 
 ## Ground Truth Read Association
-During *in silico* mixing of WGBS reads, we annotated mouse reads in the read header as `mouse_` or `human_`. This information can be extracted after alignment and is calculated in [07_visualization](../07_visualization/).
+During *in silico* mixing of WGBS reads, we annotated reads in the read header as `mouse_` or `human_`. This information can be extracted after alignment and resulting metrics are calculated in [07_visualization](../07_visualization/).
 - True Positives (TP): Human reads sorted to human.
 - False Positive (FP): Non-human reads sorted to human.
 - True Negatives (TN): Non-human reads sorted to non-human.
@@ -33,7 +33,7 @@ TP and FP are called from *graft*, TN and FN from *host*, *ambiguous*, *both*, *
 
 
 ## In Silico Combined Reference Genome
-ICRG uses a concatenated reference genome (mouse + human), whereas mouse chromosomes are labelled as m.chr. TPs are determined by counting the number of human reads (`human_` prefix) assigned to human chromosomes. FPs are calculated by extracting non-human reads (`mouse_` prefix) that aligned to mouse chromosomes or were unmapped.
+ICRG uses a concatenated reference genome (mouse + human), whereas mouse chromosomes are labelled as m.chr. TPs are determined by counting the number of human reads (`human_` prefix) assigned to human chromosomes. TNs are calculated by extracting non-human reads (`mouse_` prefix) that aligned to mouse chromosomes or were unmapped.
 
 
 ## Requirements

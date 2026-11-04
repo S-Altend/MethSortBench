@@ -151,12 +151,13 @@ def assign_confusion_matrix(df, method):
     return df
 
 
-def calculate_metrics(df, epsilon=1e-10, weight1=0.7, weight2=0.3):
+def calculate_metrics(df, weight1=0.7, weight2=0.3):
     """
-    Computes standard classification metrics and human loss metrics.
-    
+    Computes standard classification metrics, human loss, contamination
+    and a weighted performance score.
+
     Returns a dataframe with original columns + Accuracy, Recall, FPR, Precision,
-    F1, MCC, Human_Ratio, Mix_Num, GT_Human, Human_Loss, Human_Loss_pct.
+    F1, MCC, Human_Loss, Contamination_Rate, Mouse_Leakage, Human_Ratio, Score.
     """
     df = df.copy().reset_index(drop=True)
 
