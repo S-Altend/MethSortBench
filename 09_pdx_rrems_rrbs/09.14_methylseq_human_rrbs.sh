@@ -22,14 +22,14 @@ else
 fi
 
 if [[ "$USE_START_SITES" == "1" ]]; then
-    INPUT="${REPO_DIR}/09_pdx_guillen_2022/methylseq_samplesheets_newindex/guillen_rrbs_icrg_mspi.csv"
+    INPUT="${REPO_DIR}/09_pdx_rrems_rrbs/methylseq_samplesheets_newindex/guillen_rrbs_icrg_mspi.csv"
     LABEL="_mspi"
 else
-    INPUT="${REPO_DIR}/09_pdx_guillen_2022/methylseq_samplesheets_newindex/guillen_rrbs.csv"
+    INPUT="${REPO_DIR}/09_pdx_rrems_rrbs/methylseq_samplesheets_newindex/guillen_rrbs.csv"
     LABEL=""
 fi
 
-mkdir -p "${REPO_DIR}/09_pdx_guillen_2022/logs"
+mkdir -p "${REPO_DIR}/09_pdx_rrems_rrbs/logs"
 
 OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/pipelines/pipeline_${GENOME}${LABEL}"
 

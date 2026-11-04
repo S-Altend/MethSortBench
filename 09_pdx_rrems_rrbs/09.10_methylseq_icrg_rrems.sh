@@ -16,11 +16,11 @@ source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchma
 
 if [[ "$USE_START_SITES" == "1" ]]; then
     PIPELINE_SUFFIX="_mspi"
-    INPUT="${REPO_DIR}/09_pdx_guillen_2022/methylseq_samplesheets_newindex/guillen_rrems_icrg_mspi.csv"
+    INPUT="${REPO_DIR}/09_pdx_rrems_rrbs/methylseq_samplesheets_newindex/guillen_rrems_icrg_mspi.csv"
     OUT_DIR="${GUILLEN_DATA_DIR}/rrems/pipeline_icrg_mspi"
 else
     PIPELINE_SUFFIX=""
-    INPUT="${REPO_DIR}/09_pdx_guillen_2022/methylseq_samplesheets_newindex/guillen_rrems_icrg.csv"
+    INPUT="${REPO_DIR}/09_pdx_rrems_rrbs/methylseq_samplesheets_newindex/guillen_rrems_icrg.csv"
     OUT_DIR="${GUILLEN_DATA_DIR}/rrems/pipeline_icrg"
 fi
 
