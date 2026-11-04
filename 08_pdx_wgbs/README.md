@@ -15,7 +15,7 @@ In this subdirectory, we applied Xengsort onto publicly available PDX models fro
 | HCI-005-Vehicle-2 | PDX | SRX21082215 | GSM7648677 | Achinger-Kawecka 2024 | Breast Cancer PDX model | NOD-SCID-IL2γR-/- | 150 bp |
 
 ## Read sorting comparison
-Again, we compare read sorting performed by Xengsort by outcomes from ICRG and bamcmp. XenofilteR was not applicable to this dataset due to R memory issues ("long vectors not supported yet"). Additionally, we assess Runtime & Memory for every single sample to evaluate the scalability of sorting tools on real biological datasets.
+Again, we compare read sorting performed by Xengsort by outcomes from ICRG and bamcmp. XenofilteR was attempted but not applicable to this dataset due to R memory issues ("long vectors not supported yet"). Additionally, we assess Runtime & Memory for every single sample to evaluate the scalability of sorting tools on real biological datasets.
 
 ## Scripts
 
@@ -37,5 +37,5 @@ Again, we compare read sorting performed by Xengsort by outcomes from ICRG and b
 | [08.14_xenofilter.R](./08.14_xenofilter.R) | XenofilteR read sorting | [xenofilter.yml](../environments/xenofilter.yml) |
 | [08.15_visualize.ipynb](./08.15_visualize.ipynb) | Visualize read sorting results for PDX data --> Figure 2b & Extended Data Fig. 4b | [data_science.yml](../environments/data_science.yml) |
 | [08.16_runmem.ipynb](./08.16_runmem.ipynb) | Analyze runtime and memory usage for PDX data  --> Extended Data Fig. 4c | [data_science.yml](../environments/data_science.yml) |
-| [08.17_methylation_analysis.ipynb](./08.17_methylation_analysis.ipynb) | Methylation analysis of PDX data | [data_science.yml](../environments/data_science.yml) |
+
 

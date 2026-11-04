@@ -45,10 +45,10 @@ Three **technical replicates** were executed per condition.
 
 | Mixture   | Human Ratio | Sequencing Depth | Replicates |
 | --------- | ----------- | ---------------- | ---------- |
-| Mixture 1 | 60%         | 100M PE reads     | 0–2        |
-| Mixture 2 | 60%         | 150M PE reads     | 0–2        |
-| Mixture 3 | 60%         | 150M PE reads     | 0–2        |
-| Mixture 4 | 60%         | 150M PE reads     | 0–2        |
+| Mixture 1 | 60%         | 50M PE reads     | 0–2        |
+| Mixture 2 | 60%         | 50M PE reads     | 0–2        |
+| Mixture 3 | 60%         | 50M PE reads     | 0–2        |
+| Mixture 4 | 60%         | 50M PE reads     | 0–2        |
 
 ## Scripts
 
@@ -63,6 +63,6 @@ Three **technical replicates** were executed per condition.
 | [06.6_bamcmp_bam_sorting.sh](./06.6_bamcmp_bam_sorting.sh)                        | Name-sorted *.bam* files required for bamcmp input                                                                              | [bamcmp.yml](../environments/bamcmp.yml)             | -                                         |
 | [06.7_bamcmp_array.sh](./06.7_bamcmp_array.sh)                                    | bamcmp read sorting (array job)                                                                                                 | [bamcmp.yml](../environments/bamcmp.yml)             | ✓ runtime + memory                        |
 | [06.8_xenofilter_samplesheet.R](./06.8_xenofilter_samplesheet.R)                  | Create samplesheet as input for XenofilteR                                                                                      | [xenofilter.yml](../environments/xenofilter.yml)     | -                                         |
-| [06.10_xenofilter_bam_sorting.sh](./06.10_xenofilter_bam_sorting.sh)              | Coordinate-sorted *.bam* files required for XenofilteR input                                                                    | [xenofilter.yml](../environments/xenofilter.yml)     | -                                         |
-| [06.11_xenofilter_array.R](./06.11_xenofilter_array.R)                            | XenofilteR read sorting (array job)                                                                                             | [xenofilter.yml](../environments/xenofilter.yml)     | ✓ runtime + memory                        |
-| [06.12_runtime_memory.ipynb](./06.12_runtime_memory.ipynb)                        | Extract nextflow alignment pipeline traces and compute runtime + memory statistics                                              | [data_science.yml](../environments/data_science.yml) | Extracts runtime + memory from alignments |
+| [06.9_xenofilter_bam_sorting.sh](./06.9_xenofilter_bam_sorting.sh)              | Coordinate-sorted *.bam* files required for XenofilteR input                                                                    | [xenofilter.yml](../environments/xenofilter.yml)     | -                                         |
+| [06.10_xenofilter_array.R](./06.10_xenofilter_array.R)                            | XenofilteR read sorting (array job)                                                                                             | [xenofilter.yml](../environments/xenofilter.yml)     | ✓ runtime + memory                        |
+| [06.11_runtime_memory.ipynb](./06.11_runtime_memory.ipynb)                        | Extract nextflow alignment pipeline traces and compute runtime + memory statistics                                              | [data_science.yml](../environments/data_science.yml) | Extracts runtime + memory from alignments |
