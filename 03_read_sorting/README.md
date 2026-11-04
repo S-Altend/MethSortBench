@@ -83,7 +83,7 @@ Bamcmp (v2.2) species assignment was performed with name-based comparison (-n) a
 XenofilteR is also an alignment-based read sorting tool that calculates edit distances of each read against the human and mouse reference genomes. Paired-end reads are classified to be *human* or else discarded.
 
 ### XenofilteR alignment-based sorting
-XenofilteR was run in R (v1.6) using the XenofilteR() function with default parameters, except for MM_threshold = 8 to increase performance for longer (100 and 150 bp) paired-end reads.
+XenofilteR (v1.6) was run in R using the XenofilteR() function with default parameters, except for MM_threshold = 8 to increase performance for longer (100 and 150 bp) paired-end reads.
 
 ## Scripts
 
@@ -93,7 +93,7 @@ XenofilteR was run in R (v1.6) using the XenofilteR() function with default para
 | [03.2_xengsort.sh](./03.2_xengsort.sh)                           | Xengsort .fastq read sorting                                        | [xengsort.yml](../environments/xengsort.yml)     |
 | [03.3_bamcmp.sh](./03.3_bamcmp.sh)                               | bamcmp alignment-based read sorting                                 | [bamcmp.yml](../environments/bamcmp.yml)         |
 | [03.3_xenofilter_samplesheet.R](./03.3_xenofilter_samplesheet.R) | Creates samplesheet required for XenofilteR read sorting              | [xenofilter.yml](../environments/xenofilter.yml) |
-| [03.4_xenofilter_coord_sorting.R](./03.4_xenofilter_coord_sorting.sh)          | Sorts bam file by coordinates as required for XenofilteR read sorting | [xenofilter.yml](../environments/xenofilter.yml) |
+| [03.4_xenofilter_coord_sorting.sh](./03.4_xenofilter_coord_sorting.sh)          | Sorts bam file by coordinates as required for XenofilteR read sorting | [xenofilter.yml](../environments/xenofilter.yml) |
 | [03.5_xenofilter.R](./03.5_xenofilter.R)                         | Xenofilter alignment-based read sorting                             | [xenofilter.yml](../environments/xenofilter.yml) |
 
 
