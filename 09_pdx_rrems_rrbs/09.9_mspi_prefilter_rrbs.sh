@@ -14,7 +14,7 @@ source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchma
 READ_DIR="${GUILLEN_DATA_DIR}/rrbs/trimmed_reads"
 OUT_DIR="${GUILLEN_DATA_DIR}/rrbs/mspi_prefiltered"
 mkdir -p "$OUT_DIR"
-mkdir -p "${REPO_DIR}/09_pdx_guillen_2022/logs"
+mkdir -p "${REPO_DIR}/09_pdx_rrems_rrbs/logs"
 
 SAMPLES=( $(ls "${READ_DIR}"/*_r1_trimmed.fq.gz | xargs -I{} basename {} _r1_trimmed.fq.gz) )
 SAMPLE="${SAMPLES[$((LSB_JOBINDEX - 1))]}"
