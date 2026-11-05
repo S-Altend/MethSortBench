@@ -29,7 +29,7 @@ sample_map_short1 = {
 def read_pdx_evaluations(results_dir, method):
     """Read evaluation.tsv files from PDX method results.
 
-    Each evaluation.tsv is produced by the 08_pdx evaluate scripts and has
+    Each evaluation.tsv is produced by the 08_pdx_wgbs evaluate scripts and has
     columns: Category, Reads, Sample, Method.
 
     Parameters

@@ -11,7 +11,7 @@ source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchma
 
 READ_DIR="${PDX_DATA_DIR}/trimmed_reads"
 OUT_DIR="${PDX_DATA_DIR}/xengsort_newindex"
-INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
+INDEX_PATH="${DATA_DIR}/xengsort_newindex/converted_index"
 
 mkdir -p "$OUT_DIR"
 
