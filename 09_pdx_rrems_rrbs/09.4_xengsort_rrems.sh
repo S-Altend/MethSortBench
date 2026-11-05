@@ -17,7 +17,7 @@ USE_START_SITES="${USE_START_SITES:-0}"
 
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 READ_DIR="${GUILLEN_DATA_DIR}/rrems/trimmed_reads"
-INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
+INDEX_PATH="${DATA_DIR}/xengsort_newindex/converted_index"
 
 if [[ "$USE_START_SITES" == "1" ]]; then
     OUT_DIR="${GUILLEN_DATA_DIR}/rrems/xengsort_mspi_newindex"

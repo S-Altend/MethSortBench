@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------------------
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DATA_DIR="${REPO_DIR}/data"
-ALIGNMENT_DIR="${DATA_DIR}/methylseq"
+ALIGNMENT_DIR="${DATA_DIR}/methylseq_refseq"
 REFERENCE_DIR="${DATA_DIR}/reference_genomes"   # symlink → epiproper_data/reference_genomes
 PDX_DATA_DIR="${DATA_DIR}/achinger-kawecka_2024" # reads/trimmed_reads/xengsort_raw are symlinks to odcf
 GUILLEN_DATA_DIR="${DATA_DIR}/guillen_2022" # reads/trimmed_reads/xengsort_raw are symlinks to odcf

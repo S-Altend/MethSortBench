@@ -12,5 +12,5 @@ make_samplesheet(
     genome="combined",
     total_reads=["50000000"],
     data_dir=REPO / "data" / "mixtures",
-    out_dir=REPO / "icrg" / "methylseq_samplesheets",
+    out_dir=REPO / "04_icrg" / "methylseq_samplesheets",
 )
