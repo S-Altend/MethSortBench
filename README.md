@@ -32,3 +32,5 @@ In summary, the adapted Xengsort enables accurate, conversion-aware read sorting
 | PDX Validation | [09_pdx_rrems_rrbs](./09_pdx_rrems_rrbs/) | Validate Xengsort on real RRBS and RREM-seq PDX data (Guillen 2022) |
 
 Each folder contains its own README with detailed script usage. Shared conda environments are in [environments/](./environments/), and shared Python helper functions used across notebooks are in [helper/](./helper/).
+
+Note: These scripts document the exact procedure and parameters used in the paper. They were run on the DKFZ LSF cluster with absolute paths, and some output directories were renamed during development (e.g. _newindex), so paths may need adapting to rerun.

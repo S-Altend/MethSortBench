@@ -5,7 +5,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "helper"))
 from make_samplesheet import make_samplesheet
 
 REPO    = Path(__file__).parent.parent
-OUT_DIR = Path(__file__).parent / "methylseq_samplesheets"
+OUT_DIR = Path(__file__).parent / "methylseq_samplesheets_newindex"
 
 PAIRS = [
     ("wgbs-human-pancreas-organoid1", "wgbs-mouse-pancreas-organoid1"),

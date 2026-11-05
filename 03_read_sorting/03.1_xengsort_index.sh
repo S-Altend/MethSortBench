@@ -2,7 +2,7 @@
 set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
-OUTPUT_DIR="${DATA_DIR}/xengsort"
+OUTPUT_DIR="${DATA_DIR}/xengsort_newindex"
 INDEX_PATH="${OUTPUT_DIR}/converted_index"
 mkdir -p "$OUTPUT_DIR"
 

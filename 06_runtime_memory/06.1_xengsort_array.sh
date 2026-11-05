@@ -24,7 +24,7 @@ SAMPLE_PREFIX="${HUMAN}_${MOUSE}"
 
 TOTAL_COUNT="50000000"
 MIXTURE="60p"
-INDEX_PATH="${DATA_DIR}/xengsort/test/converted_index"
+INDEX_PATH="${DATA_DIR}/xengsort_newindex/converted_index"
 
 MIXTURE_DIR="${DATA_DIR}/mixtures/${SAMPLE_PREFIX}/${TOTAL_COUNT}/${MIXTURE}"
 OUT_PREFIX="${DATA_DIR}/runtime_memory/xengsort_newindex/${SAMPLE_PREFIX}/${TOTAL_COUNT}/${MIXTURE}/mixed_${REPLICATE}"
