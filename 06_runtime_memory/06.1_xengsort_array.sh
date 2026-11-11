@@ -10,7 +10,6 @@ set -euo pipefail
 source "/omics/groups/OE0219/internal/altendorfer/epiproper/read_sorting_benchmark/config.sh"
 
 # 4 sample pairs × 3 replicates = 12 jobs
-# Index layout: jobs 1-3 = organoid1 reps 0-2, 4-6 = organoid2, 7-9 = organoid3, 10-12 = cellline
 HUMAN_SAMPLES=("wgbs-human-pancreas-organoid1" "wgbs-human-pancreas-organoid2" "wgbs-human-pancreas-organoid3" "wgbs-human-brca-cl1")
 MOUSE_SAMPLES=("wgbs-mouse-pancreas-organoid1" "wgbs-mouse-pancreas-organoid2" "wgbs-mouse-pancreas-organoid3" "wgbs-mouse-bm-hsc1")
 

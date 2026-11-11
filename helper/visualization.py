@@ -408,7 +408,6 @@ def plot_confusion_bar(
             
             plt.show()
 
-
 def plot_stacked_confusion_bar(
     df,
     metrics_order=["TP", "TN", "FP", "FN"],
@@ -420,11 +419,11 @@ def plot_stacked_confusion_bar(
     figsize=None,
     xlabel_size=10,
     ylabel_size=10,
-    xtick_size=8,
-    ytick_size=8,
+    xtick_size=9,
+    ytick_size=9,
     title_size=12,
     legend_size=9,
-    annotation_size=12,
+    annotation_size=7,
     dpi=300
 ):
     """
@@ -767,34 +766,65 @@ def boxplot_by_samples(
 
     plt.show()
 
-
 def lineplot_tools(df, x="Human_Ratio", y="Human_Loss", hue="Method",
-                   ylabel=None, ylabel_fs=8, xlabel_fs=8, xlabel="Human Ratio",
-                   tick_fs=7, figsize=None, palette=None, errorbar="ci", marker="o",
-                   linewidth=1, markersize=4, legend=True, pos=None,
+                   ylabel=None, ylabel_fs=10, xlabel_fs=10, xlabel="Human Ratio",
+                   tick_fs=8, figsize=None, palette=None, errorbar="sd",
+                   marker="o", linewidth=1, markersize=4, legend=True, pos=None,
+                   xlim=(0, 1), n_xticks=5,
+                   percent=False, percent_scale=None, percent_decimals=0,
+                   x_percent=True, x_percent_xmax=1, x_percent_decimals=0,
                    save=False, fig_dir="./", file_path="lineplot.png"):
+
+    # ---- percent handling (y-axis) ---------------------------------------
+    if percent:
+        df = df.copy()
+        if percent_scale is None:
+            percent_scale = 100 if df[y].max() <= 1.0 else 1
+        if percent_scale != 1:
+            df[y] = df[y] * percent_scale
+    # -----------------------------------------------------------------------
+
     fig, ax = plt.subplots(figsize=figsize)
+
     if pos is not None:
         ax.set_position(pos)
+
     if xlabel is None:
         xlabel = x
     if ylabel is None:
         ylabel = y
+    if percent and not ylabel.rstrip().endswith("%"):
+        ylabel = f"{ylabel} [%]"
     if palette is None:
         palette = sns.color_palette("Set2")
-    hue_order = list(df["Method"].dropna().unique())
+
+    hue_order = list(df[hue].dropna().unique())
+
     sns.lineplot(
-        data=df, x=x, y=y, hue=hue, hue_order=hue_order,
-        palette=palette, errorbar=errorbar, marker=marker,
-        linewidth=linewidth, markersize=markersize, ax=ax, legend=legend,
+        data=df, x=x, y=y, hue=hue, hue_order=hue_order, palette=palette,
+        errorbar=errorbar, marker=marker, linewidth=linewidth,
+        markersize=markersize, ax=ax, legend=legend,
     )
-    ax.set_xlim(0.1, 0.9)
-    ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
+
+    ax.set_xlim(*xlim)
+    if n_xticks:
+        lo, hi = df[x].min(), df[x].max()
+        ax.set_xticks(np.linspace(lo, hi, n_xticks))
+    if x_percent:
+        ax.xaxis.set_major_formatter(
+            PercentFormatter(xmax=x_percent_xmax, decimals=x_percent_decimals)
+        )
+
+    if percent:
+        ax.yaxis.set_major_formatter(PercentFormatter(xmax=100, decimals=percent_decimals))
+
     ax.set_ylabel(ylabel, fontsize=ylabel_fs)
     ax.set_xlabel(xlabel, fontsize=xlabel_fs)
     ax.tick_params(axis="both", labelsize=tick_fs)
+
     if save:
-        plt.savefig(fig_dir / file_path)
+        fig.savefig(Path(fig_dir) / file_path, bbox_inches=None)
+
     return ax
 
 
@@ -854,19 +884,19 @@ def barplot_runmem(
     df, x="sample", y="peak_rss_gb", hue="method",
     xlabel=None, ylabel=None, figsize=None, errorbar=None, legend=True,
     palette=None, ylabel_fs=10, xlabel_fs=10, xtick_fs=8, ytick_fs=8,
-    hue_order=None, xtick_rotation=0,
-    save=False, fig_dir="./", file_name="barplot.png", pos=None,
+    hue_order=None, xtick_rotation=0, bar_alpha=0.4, bar_lw=1.5,
+    margins=(0.22, 0.20, 0.97, 0.97),
+    save=False, fig_dir="./", file_name="barplot.png",
     horizontal=False, reverse_order=False
 ):
     fig, ax = plt.subplots(figsize=figsize)
 
     if palette is None:
         palette = sns.color_palette("Set2")
-
-    sample_order = sorted(df[x].unique(), reverse=reverse_order)
-
     if hue_order is None:
         hue_order = list(df[hue].dropna().unique())
+
+    sample_order = sorted(df[x].unique(), reverse=reverse_order)
 
     if horizontal:
         plot_x, plot_y = y, x
@@ -878,17 +908,16 @@ def barplot_runmem(
         ylabel = ylabel or y
 
     sns.barplot(
-        data=df,
-        x=plot_x,
-        y=plot_y,
-        hue=hue,
-        errorbar=errorbar,
-        legend=legend,
-        palette=palette,
-        ax=ax,
-        order=sample_order,
-        hue_order=hue_order
+        data=df, x=plot_x, y=plot_y, hue=hue, errorbar=errorbar,
+        legend=legend, palette=palette, ax=ax,
+        order=sample_order, hue_order=hue_order,
     )
+
+    for p in ax.patches:
+        r, g, b, _ = p.get_facecolor()
+        p.set_edgecolor((r, g, b, 1))
+        p.set_facecolor((r, g, b, bar_alpha))
+        p.set_linewidth(bar_lw)
 
     ax.set_xlabel(xlabel, fontsize=xlabel_fs)
     ax.set_ylabel(ylabel, fontsize=ylabel_fs)
@@ -896,18 +925,19 @@ def barplot_runmem(
     ax.tick_params(axis="y", labelsize=ytick_fs)
 
     if xtick_rotation != 0 and not horizontal:
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=xtick_rotation, ha="right")
-
-    if pos is not None:
-        ax.set_position(pos)
+        ax.tick_params(axis="x", rotation=xtick_rotation)
+        plt.setp(ax.get_xticklabels(), ha="right")
 
     if legend:
         ax.legend(title="Method", fontsize=8, title_fontsize=8)
     elif ax.get_legend() is not None:
         ax.get_legend().remove()
 
+    left, bottom, right, top = margins
+    fig.subplots_adjust(left=left, bottom=bottom, right=right, top=top)
+
     if save:
-        plt.savefig(fig_dir / file_name, dpi=300, bbox_inches="tight")
+        fig.savefig(Path(fig_dir) / file_name, dpi=300, pad_inches=0)
 
     return ax, ax.get_position()
 

@@ -14,3 +14,4 @@ Adapter trimming was skipped within the pipeline (*--skip_trimming*), as reads h
 | [02.2_methylseq_human.sh](./02.2_methylseq_human.sh)             | WGBS alignment against the human reference genome                                 | [nextflow.yml](../environments/nextflow.yml)         |
 | [02.2_methylseq_mouse.sh](./02.2_methylseq_mouse.sh)             | WGBS alignment against the mouse reference genome                                 | [nextflow.yml](../environments/nextflow.yml)         |
 | [02.3_methylseq_move_bam.py](./02.3_methylseq_move_bam.py)       | Move and organise output BAM files from the methylseq pipeline                    | [data_science.yml](../environments/data_science.yml) |
+| [02.4_visualize_alignment_rates.ipynb](./02.4_visualize_alignment_rates.ipynb) | Visualize alignment rates from human-mouse mixtures against the human reference genome | [data_science.yml](../environments/data_science.yml) |
