@@ -1,7 +1,7 @@
 
 REFERENCE_DIR="/omics/groups/OE0219/internal/altendorfer/epiproper_data/reference_genomes"
 
-### SPECIFY GENOME PATHS
+# Specify genome paths
 GENOME_HUMAN="GRCh38.p14-genomic"
 GENOME_MOUSE="GRCm38-genomic"
 
@@ -10,10 +10,7 @@ GENOME_MOUSE_PATH="$REFERENCE_DIR/$GENOME_MOUSE.fna"
 
 BISMARK_GENOME_DIR="$REFERENCE_DIR/bismark_${GENOME_HUMAN}_${GENOME_MOUSE}_combined"
 
-############################################################
-### BUILD COMBINED GENOME (only once)
-############################################################
-
+# Build concatenated reference genome
 mkdir -p "$BISMARK_GENOME_DIR"
 
 # # Create edited mouse genome with m.chr prefix

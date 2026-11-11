@@ -8,7 +8,6 @@ SAMPLE_PREFIX="${HUMAN_SAMPLE}_${MOUSE_SAMPLE}"
 BAMCMP_DIR="${DATA_DIR}/runtime_memory/bamcmp"
 mkdir -p "$BAMCMP_DIR"
 
-# Override: runtime measurement uses a single count/mixture/replicate subset
 TOTAL_COUNTS=("50000000")
 MIXTURES=("60p")
 REPLICATES=("0" "1" "2")
